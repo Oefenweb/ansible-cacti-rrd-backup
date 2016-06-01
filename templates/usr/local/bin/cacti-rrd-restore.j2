@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#
+# {{ ansible_managed }}
+#
+# set -x;
+set -e;
+set -o pipefail;
+#
+thisFile="$(readlink -f "${0}")";
+thisFilePath="$(dirname "${thisFile}")";
+
+test -d '{{ cacti_rrd_backup_rra_path }}';
+test -d '{{ cacti_rrd_backup_backup_path }}';
+
+cd {{ cacti_rrd_backup_backup_path }};
+for xmlFile in *.xml; do
+  rrdFile="$(echo "${xmlFile}" | sed 's/.xml//')";
+  rrdtool restore -f "${xmlFile}" "{{ cacti_rrd_backup_rra_path}}/${rrdFile}";
+done;
+
+find '{{ cacti_rrd_backup_rra_path}}' -type f -name "*.rrd" -print0 | xargs --no-run-if-empty -0 \
+  chmod {{ cacti_rrd_backup_rrd_file_mode }} \
+;
+find '{{ cacti_rrd_backup_rra_path}}' -type f -name "*.rrd" -print0 | xargs --no-run-if-empty -0 \
+  chown {{ cacti_rrd_backup_rrd_file_owner }}:{{ cacti_rrd_backup_rrd_file_group }} \
+;
