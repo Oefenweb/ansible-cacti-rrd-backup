@@ -1,0 +1,6 @@
+# vars file for cacti-rrd-backup
+---
+cacti_rrd_backup_dependencies:
+  - rrdtool
+
+cacti_rrd_backup_backup_path_mode: '0750'

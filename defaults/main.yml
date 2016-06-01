@@ -1,0 +1,10 @@
+# defaults file for cacti-rrd-backup
+---
+cacti_rrd_backup_install_path: /usr/local/bin
+
+cacti_rrd_backup_rra_path: /var/lib/cacti/rra
+cacti_rrd_backup_backup_path: /tmp/cacti-rrd-backup
+
+cacti_rrd_backup_rrd_file_mode: '0664'
+cacti_rrd_backup_rrd_file_owner: www-data
+cacti_rrd_backup_rrd_file_group: "{{ cacti_rrd_backup_rrd_file_owner }}"
