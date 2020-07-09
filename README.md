@@ -1,6 +1,7 @@
 ## cacti-rrd-backup
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-cacti-rrd-backup.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-cacti-rrd-backup) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-cacti--rrd--backup-blue.svg)](https://galaxy.ansible.com/Oefenweb/ansible-cacti-rrd-backup)
+[![Build Status](https://travis-ci.org/Oefenweb/ansible-cacti-rrd-backup.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-cacti-rrd-backup)
+[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-cacti--rrd--backup-blue.svg)](https://galaxy.ansible.com/Oefenweb/ansible-cacti-rrd-backup)
 
 Perform Cacti RRD backups using [rrdtool](http://oss.oetiker.ch/rrdtool/).
 
@@ -29,7 +30,7 @@ None
 ---
 - hosts: all
   roles:
-   - cacti-rrd-backup
+    - cacti-rrd-backup
 ```
 
 #### License
