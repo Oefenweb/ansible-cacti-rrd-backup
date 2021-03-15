@@ -1,4 +1,4 @@
-# vars file for cacti-rrd-backup
+# vars file
 ---
 cacti_rrd_backup_dependencies:
   - rrdtool

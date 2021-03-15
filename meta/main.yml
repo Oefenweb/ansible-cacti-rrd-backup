@@ -1,6 +1,7 @@
-# meta file for cacti-rrd-backup
+# meta file
 ---
 galaxy_info:
+  namespace: oefenweb
   role_name: cacti-rrd-backup
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
