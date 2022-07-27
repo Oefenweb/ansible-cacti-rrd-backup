@@ -1,7 +1,7 @@
 # tasks file
 ---
 - name: install dependencies
-  apt:
+  ansible.builtin.apt:
     name: "{{ cacti_rrd_backup_dependencies }}"
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
@@ -13,7 +13,7 @@
     - cacti-rrd-backup-install-dependencies
 
 - name: generate (backup) script
-  template:
+  ansible.builtin.template:
     src: usr/local/bin/cacti-rrd-backup.j2
     dest: "{{ cacti_rrd_backup_install_path }}/cacti-rrd-backup"
     owner: root
@@ -26,7 +26,7 @@
     - cacti-rrd-backup-configuration
 
 - name: generate (restore) script
-  template:
+  ansible.builtin.template:
     src: usr/local/bin/cacti-rrd-restore.j2
     dest: "{{ cacti_rrd_backup_install_path }}/cacti-rrd-restore"
     owner: root
