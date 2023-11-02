@@ -30,7 +30,7 @@ None
 ---
 - hosts: all
   roles:
-    - cacti-rrd-backup
+    - oefenweb.cacti-rrd-backup
 ```
 
 #### License
